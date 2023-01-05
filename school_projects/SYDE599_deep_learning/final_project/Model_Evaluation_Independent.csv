@@ -1,0 +1,3 @@
+,macro_averaged_precision,micro_averaged_precision,macro_averaged_recall,micro_averaged_recall,macro_averaged_f1,micro_averaged_f1,cm,accuracy,eval_accuracy,eval_loss
+0,0.6951661474344905,0.7830479987492183,0.6795990782164696,0.7830479987492183,0.6557770166941775,0.7830479987492183,"[[3574.  1150.4]
+ [ 539.4 2557.2]]",0.7830479987492183,0.7792429,0.49659938
