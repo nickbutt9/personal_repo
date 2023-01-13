@@ -35,9 +35,9 @@
 
 # importing and formatting randomized boards from sudoku package
 from sudoku import Sudoku
-board = Sudoku(3).difficulty(0.8).board
-for i in range(len(board)):
-    board[i] = [0 if x is None else x for x in board[i]]
+sudoku_board = Sudoku(3).difficulty(0.8).board
+for z in range(len(sudoku_board)):
+    sudoku_board[z] = [0 if x is None else x for x in sudoku_board[z]]
 
 
 def solve(board):  # recursive function that uses backtracking to find the correct soln if it exists
@@ -76,7 +76,7 @@ def check_valid(board, value, position):  # value and position of inserted numbe
 
     for i in range(box_y*3, box_y*3 + 3):  # (box_y*3, box_x*3) puts you in the upper left corner of your desired box
         for j in range(box_x*3, box_x*3 + 3):
-            if board[i][j] == value and (i,j) != position:
+            if board[i][j] == value and (i, j) != position:
                 return False
 
     # passed all checks so valid
@@ -101,14 +101,18 @@ def find_empty(board):
     for i in range(len(board)):
         for j in range(len(board[0])):
             if board[i][j] == 0:
-                return (i, j)  # row and col of empty location
+                return i, j  # row and col of empty location
 
     return None
 
 
-print('The input board is:')
-print_board(board)
+def run_solver(board):
+    print('The input board is:')
+    print_board(board)
 
-solve(board)
-print('\nThe solved board is:')
-print_board(board)
+    solve(board)
+    print('\nThe solved board is:')
+    print_board(board)
+
+
+# run_solver(sudoku_board)
