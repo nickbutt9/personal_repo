@@ -230,7 +230,7 @@ def main(genomes, config):
 
         for x, bird in enumerate(birds):
             bird.move()
-            genes[x].fitness += 0.1
+            genes[x].fitness += 0.05
 
             output = neural_nets[x].activate((bird.y, abs(bird.y - pipes[pipe_index].height),
                                               abs(bird.y - pipes[pipe_index].bottom)))
@@ -261,7 +261,7 @@ def main(genomes, config):
         if add_pipe:
             score += 1
             for g in genes:
-                g.fitness += 5
+                g.fitness += 2
             pipes.append(Pipe(600))
 
         for rem in remove:
